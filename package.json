@@ -1,0 +1,36 @@
+{
+  "name": "react-stack-playground",
+  "private": true,
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aslansky/react-stack-playground.git"
+  },
+  "homepage": "https://github.com/aslansky/react-stack-playground",
+  "author": {
+    "name": "Alexander Slansky",
+    "email": "alexander@slansky.net",
+    "url": "http://slansky.net"
+  },
+  "dependencies": {
+    "react": "~0.8.0",
+    "showdown": "aslansky/showdown",
+    "shoe": "0.0.15",
+    "node-bourbon": "1.0.0"
+  },
+  "devDependencies": {
+    "gulp-util": "~2.2.12",
+    "gulp": "~3.4.0",
+    "gulp-browserify": "0.3.4",
+    "gulp-if": "0.0.3",
+    "gulp-sass": "~0.4.0",
+    "gulp-uglify": "~0.1.0",
+    "reactify": "~0.5.1",
+    "tiny-lr": "0.0.5",
+    "express": "~3.4.7",
+    "chokidar": "~0.8.1"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}

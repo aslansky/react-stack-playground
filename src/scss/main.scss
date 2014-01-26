@@ -1,0 +1,58 @@
+@import 'bourbon';
+
+$primary-color: #333;
+$border-color: #BBB;
+
+$primary-size: 16px;
+
+body {
+  font: $primary-size $helvetica;
+  color: $primary-color;
+  background: #EEE;
+  margin: 50px;
+}
+
+h1 {
+  font-size: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+h2 {
+  font-size: 1.2em;
+  margin-bottom: 0;
+}
+
+input, textarea {
+  border: 1px solid $border-color;
+  display: block;
+  font-size: $primary-size;
+  padding: 5px;
+  width: 400px;
+}
+
+textarea {
+  height: 100px;
+}
+
+button {
+  @include button;
+}
+
+.comment {
+  margin-bottom: 2em;
+  width: 400px;
+  &.comment-enter {
+    opacity: 0;
+    @include transition(opacity 500ms ease-in);
+    &.comment-enter-active {
+      opacity: 1;
+    }
+  }
+  &.comment-leave {
+    opacity: 1;
+    @include transition(opacity 500ms ease-in);
+    &.comment-leave-active {
+      opacity: 0;
+    }
+  }
+}
