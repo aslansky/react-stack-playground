@@ -8,6 +8,7 @@ var gulpif = require('gulp-if');
 var sass = require('gulp-sass');
 var server = require('./server');
 var bourbon = require('node-bourbon').includePaths;
+var watch = require('gulp-watch');
 
 gutil.log('Environment', gutil.colors.blue(gulp.env.production ? 'Production' : 'Development'));
 
@@ -29,6 +30,17 @@ gulp.task('scripts', function() {
 
 gulp.task('styles', function () {
   return gulp.src('./src/scss/main.scss')
+    .pipe(sass({
+      outputStyle: gulp.env.production ? 'compressed' : 'expanded',
+      includePaths: ['./src/scss'].concat(bourbon),
+      errLogToConsole: gulp.env.watch
+    }))
+    .pipe(gulp.dest('./dist/css'));
+});
+
+gulp.task('watch-sass', function () {
+  return gulp.src('./src/scss/**/*.scss')
+    .pipe(watch())
     .pipe(sass({
       outputStyle: gulp.env.production ? 'compressed' : 'expanded',
       includePaths: ['./src/scss'].concat(bourbon),

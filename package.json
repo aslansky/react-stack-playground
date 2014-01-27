@@ -29,7 +29,8 @@
     "reactify": "~0.5.1",
     "tiny-lr": "0.0.5",
     "express": "~3.4.7",
-    "chokidar": "~0.8.1"
+    "chokidar": "~0.8.1",
+    "gulp-watch": "~0.5.0"
   },
   "engines": {
     "node": ">=0.10.0"
