@@ -44,7 +44,7 @@ module.exports = function(port, lrport) {
     sendFile(stream);
   });
 
-  sock.install(app.listen(port), '/comments');
+  sock.install(app.listen(port), '/api');
   gutil.log('Listening on', port + ' / ' + lrport);
 
   return {

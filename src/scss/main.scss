@@ -34,7 +34,7 @@ textarea {
   height: 100px;
 }
 
-button {
+a.button, button {
   @include button;
 }
 

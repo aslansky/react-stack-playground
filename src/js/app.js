@@ -1,12 +1,24 @@
 'use strict';
 
 var React = require('react');
+var director = require('director');
 var CommentBox = require('./jsx/comment-box');
+var router = director.Router().init();
+var shoe = require('shoe');
+var stream = shoe('/api');
 
-React.renderComponent(
+var app = React.renderComponent(
   CommentBox({
-    url: 'comments.json',
-    pollInterval: 2000
+    stream: stream,
+    page: router.getRoute(0)
   }),
   document.getElementById('content')
 );
+
+stream.on('data', function (data) {
+  app.setState({data: JSON.parse(data)});
+});
+
+router.on('/:state', function (page) {
+  app.setState({page: page});
+});

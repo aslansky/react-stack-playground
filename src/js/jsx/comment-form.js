@@ -14,13 +14,11 @@ module.exports = React.createClass({
   },
   render: function() {
     return (
-      <div className="commentForm">
-        <form className="commentForm" onSubmit={this.handleSubmit}>
-          <input type="text" placeholder="Your name" ref="author" />
-          <textarea placeholder="Say something..." ref="text"></textarea>
-          <button type="submit">Post</button>
-        </form>
-      </div>
+      <form className="commentForm" onSubmit={this.handleSubmit}>
+        <input type="text" placeholder="Your name" ref="author" />
+        <textarea placeholder="Say something..." ref="text"></textarea>
+        <button type="submit">Post</button>
+      </form>
     );
   }
 });
